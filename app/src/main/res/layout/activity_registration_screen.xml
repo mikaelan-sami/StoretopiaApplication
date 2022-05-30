@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".RegistrationScreen">
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_text"
+        android:fontFamily="serif-monospace"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:text="Register"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="393dp"
+        android:layout_height="37dp"
+        android:text="Greetings Fellow Collector"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.148" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please enter the following details to join the elite collecting family"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.202" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="409dp"
+        android:layout_height="10dp"
+        android:background="?android:attr/listDivider"
+        android:backgroundTint="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="233dp"
+        android:layout_height="25dp"
+        android:text="Email Address"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.296" />
+
+    <EditText
+        android:id="@+id/edRegEmail"
+        android:layout_width="223dp"
+        android:layout_height="35dp"
+        android:background="@drawable/round_textboxes"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="example@gmail.com"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#4E4C4C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="233dp"
+        android:layout_height="25dp"
+        android:text="Password"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <EditText
+        android:id="@+id/edRegPassword"
+        android:layout_width="221dp"
+        android:layout_height="38dp"
+        android:background="@drawable/round_textboxes"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#4E4C4C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="233dp"
+        android:layout_height="25dp"
+        android:text="Confirm Password"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
+
+    <EditText
+        android:id="@+id/edConfirmPassword"
+        android:layout_width="225dp"
+        android:layout_height="40dp"
+        android:background="@drawable/round_textboxes"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#4E4C4C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.735"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="233dp"
+        android:layout_height="25dp"
+        android:text="Full Name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <EditText
+        android:id="@+id/edFullName"
+        android:layout_width="228dp"
+        android:layout_height="40dp"
+        android:background="@drawable/round_textboxes"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="********"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="#4E4C4C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.479"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_textboxes"
+        android:onClick="addItem"
+        android:text="Register"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.89"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
