@@ -12,7 +12,7 @@ public class DBHelper {
 
     public DBHelper() {
         FirebaseDatabase db = FirebaseDatabase.getInstance();
-        databaseReference = db.getReference();
+        databaseReference = db.getReference("SoccerPlayerInfo");
     }
 
     public Task<Void> AddItem(String key, HashMap<String, Object> hashMap) {

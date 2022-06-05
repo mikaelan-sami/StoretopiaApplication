@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/splashy"
-    tools:context=".SpashyScreen">
+    tools:context=".textView">
 
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="194dp"
-        android:layout_height="205dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/storetopia"
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="411dp"
+        android:layout_height="132dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.457"
-        tools:ignore="ImageContrastCheck" />
-
-
+        app:layout_constraintVertical_bias="0.007" />
 </androidx.constraintlayout.widget.ConstraintLayout>

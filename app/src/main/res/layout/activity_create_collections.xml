@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="408dp"
-        android:layout_height="78dp"
+        android:layout_width="402dp"
+        android:layout_height="63dp"
         android:background="@drawable/round_text"
         android:fontFamily="serif-monospace"
         android:padding="10dp"
@@ -38,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203" />
+        app:layout_constraintVertical_bias="0.315" />
 
     <EditText
         android:id="@+id/edCollectionName"
@@ -47,7 +47,7 @@
         android:background="@drawable/round_textboxes"
         android:backgroundTint="@color/white"
         android:ems="10"
-        android:hint="Marvel Action Figures"
+        android:hint="Defender, Midfielder"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textAlignment="center"
@@ -56,10 +56,9 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.258" />
+        app:layout_constraintVertical_bias="0.387" />
 
     <TextView
         android:id="@+id/textView18"
@@ -71,9 +70,10 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <EditText
         android:id="@+id/edGoalsNum"
@@ -91,26 +91,10 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
+        app:layout_constraintVertical_bias="0.633"
         tools:ignore="TouchTargetSizeCheck" />
-
-    <Button
-        android:id="@+id/btnAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/buttons"
-
-        android:text="Add Collection"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
 
     <View
         android:id="@+id/divider3"
@@ -125,30 +109,15 @@
         app:layout_constraintVertical_bias="0.155" />
 
     <Button
-        android:id="@+id/btnViewCollections"
-        android:layout_width="277dp"
-        android:layout_height="49dp"
-        android:background="@drawable/buttons"
-        android:text="View Collection"
-        android:textSize="20dp"
+        android:id="@+id/btnAddCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Category"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.865" />
 
-    <ListView
-        android:id="@+id/categoryList"
-        android:dividerHeight="5dp"
-        android:divider="@color/white"
-        android:background="@color/white"
-        android:layout_width="413dp"
-        android:layout_height="214dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
 </androidx.constraintlayout.widget.ConstraintLayout>
