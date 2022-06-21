@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StoretopiaApplication">
         <activity
+            android:name=".categoryView"
+            android:exported="false" />
+        <activity
             android:name=".textView"
             android:exported="false" />
         <activity
