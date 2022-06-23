@@ -43,6 +43,7 @@ public class CreateCollections extends AppCompatActivity {
         categoryName = findViewById(R.id.edCollectionName);
         numGoals = findViewById(R.id.edGoalsNum);
         add = findViewById(R.id.btnAddCategory);
+        viewCollection = findViewById(R.id.categoriesView);
 
         add.setOnClickListener(View -> {
             HashMap hmap = new HashMap();
@@ -53,15 +54,21 @@ public class CreateCollections extends AppCompatActivity {
             String key = rootdatabaseref.child("SoccerPlayersInfo").push().getKey();
             dbHelper.AddItem(key, hmap).addOnSuccessListener(Success -> {
                 Toast.makeText(this, "Your category has been successfully created", Toast.LENGTH_SHORT).show();
-                Intent items = new Intent(CreateCollections.this, AddItemScreen.class);
-                startActivity(items);
+                categoryName.setText("");
+                numGoals.setText("");
+                //Intent items = new Intent(CreateCollections.this, AddItemScreen.class);
+                //startActivity(items);
             }).addOnFailureListener(Error -> Toast.makeText(CreateCollections.this, "Failed to add your category", Toast.LENGTH_SHORT).show());
         });
 
-
+        viewCollection.setOnClickListener(View -> {
+            Intent catViewIntent = new Intent(CreateCollections.this,categoryView.class);
+            startActivity(catViewIntent);
+        });
 
 
     }
 
-    
+
+
 }
