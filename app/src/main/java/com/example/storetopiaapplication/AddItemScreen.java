@@ -70,7 +70,7 @@ public class AddItemScreen extends AppCompatActivity {
 
         SoccerCollections sc = new SoccerCollections(Name,Team,Date);
 
-        itemDbRef.child(cc.category).child("SoccerPlayers").setValue(sc);
+        itemDbRef.child(cc.category).child("SoccerPlayers").child(Name).setValue(sc);
 
     }
 

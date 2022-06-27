@@ -34,7 +34,7 @@ public class displayListView extends AppCompatActivity {
         categoryList = new ArrayList<>();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
 
-        myRef = mFirebaseDatabase.getReference("SoccerPlayerInfo").child(cc.category).child("catName").child("SoccerPlayers");
+        myRef = mFirebaseDatabase.getReference("SoccerPlayerInfo").child(cc.category).child("SoccerPlayers");
 
         categoryArrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_text_view, R.id.textView20, categoryList);
 
@@ -43,9 +43,9 @@ public class displayListView extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                     plDate = dataSnapshot.child("datePurchased").getValue().toString();
+                     plDate = dataSnapshot.child("playerTeam").getValue().toString();
                      plName = dataSnapshot.child("playerName").getValue().toString();
-                     plTeam = dataSnapshot.child("playerTeam").getValue().toString();
+                     plTeam = dataSnapshot.child("datePurchased").getValue().toString();
 
                     snapshot.getChildren();
                     categoryList.add("Player Name: " + plName
