@@ -22,9 +22,10 @@ public class displayListView extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
     private ArrayList<String> categoryList;
-    //private Button addCatButton;
     private ListView listViewCat;
+    public static String plName, plTeam, plDate;
     private ArrayAdapter<String> categoryArrayAdapter;
+    CreateCollections cc = new CreateCollections();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class displayListView extends AppCompatActivity {
         categoryList = new ArrayList<>();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
 
-        myRef = mFirebaseDatabase.getReference("SoccerPlayers");
+        myRef = mFirebaseDatabase.getReference("SoccerPlayerInfo").child(cc.category).child("catName").child("SoccerPlayers");
 
         categoryArrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_text_view, R.id.textView20, categoryList);
 
@@ -42,9 +43,9 @@ public class displayListView extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    String plName = dataSnapshot.child("Player Name").getValue().toString();
-                    String plTeam = dataSnapshot.child("Player Team").getValue().toString();
-                    String plDate = dataSnapshot.child("Date Aquired").getValue().toString();
+                     plDate = dataSnapshot.child("datePurchased").getValue().toString();
+                     plName = dataSnapshot.child("playerName").getValue().toString();
+                     plTeam = dataSnapshot.child("playerTeam").getValue().toString();
 
                     snapshot.getChildren();
                     categoryList.add("Player Name: " + plName
@@ -64,7 +65,7 @@ public class displayListView extends AppCompatActivity {
             }
         });
 
-
+        //OnClick event for the items within the list(category)
         listViewCat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

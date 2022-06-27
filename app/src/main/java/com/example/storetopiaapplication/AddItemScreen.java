@@ -22,11 +22,10 @@ public class AddItemScreen extends AppCompatActivity {
     // variables
 
     EditText team, name, date;
-    Button image, item;
+    Button image, item, addItemScreen, btnViewList;
     ImageView viewImage;
+    DatabaseReference itemDbRef = FirebaseDatabase.getInstance().getReference("SoccerPlayerInfo");
 
-    // create object of class
-    itemDBHelper dbplayerHelper = new itemDBHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,25 +39,38 @@ public class AddItemScreen extends AppCompatActivity {
         image = findViewById(R.id.btnCamera);
         item = findViewById(R.id.button2);
         viewImage = findViewById(R.id.imageView2);
+        addItemScreen = findViewById(R.id.btnAddItemScreen);
+        btnViewList = findViewById(R.id.btnView);
 
         //set on click listener
-        DatabaseReference rootdatabaseref = FirebaseDatabase.getInstance().getReference("SoccerPlayers");
-        item.setOnClickListener(View -> {
-
-            HashMap<String, Object> hashMap = new HashMap<>();
-            //put method
-            hashMap.put("Player Team", team.getText().toString());
-            hashMap.put("Player Name", name.getText().toString());
-            hashMap.put("Date Aquired", date.getText().toString());
-
-            String key = rootdatabaseref.child("SoccerPlayers").push().getKey();
-            dbplayerHelper.AddPlayerItem(key, hashMap).addOnSuccessListener(Success ->
-            {
-                Toast.makeText(this, "Item Has Been Added, See New Record", Toast.LENGTH_SHORT).show();
-
-            }).addOnFailureListener(Error -> Toast.makeText(this, "Item not added", Toast.LENGTH_SHORT).show());
-
+        item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addItem();
+            }
         });
+
+        btnViewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewColList();
+            }
+        });
+
+
+    }
+
+    private void addItem() {
+
+        CreateCollections cc = new CreateCollections();
+
+        String Name = name.getText().toString();
+        String Team = team.getText().toString();
+        String Date = date.getText().toString();
+
+        SoccerCollections sc = new SoccerCollections(Name,Team,Date);
+
+        itemDbRef.child(cc.category).child("SoccerPlayers").setValue(sc);
 
     }
 
@@ -83,9 +95,10 @@ public class AddItemScreen extends AppCompatActivity {
             Toast.makeText(this, "Unable to take picture", Toast.LENGTH_SHORT).show();
         }
     }
-    public void viewColList(View view){
+    public void viewColList(){
         Intent listScreen = new Intent(AddItemScreen.this, displayListView.class);
         startActivity(listScreen);
     }
+
 }
 

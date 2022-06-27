@@ -32,8 +32,8 @@ public class CreateCollections extends AppCompatActivity {
 
     EditText categoryName, numGoals;
     Button add, viewCollection;
-    DBHelper dbHelper = new DBHelper();
-    DatabaseReference rootdatabaseref = FirebaseDatabase.getInstance().getReference();
+    public static String category;
+    DatabaseReference catDbRef = FirebaseDatabase.getInstance().getReference("SoccerPlayerInfo");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,20 +45,11 @@ public class CreateCollections extends AppCompatActivity {
         add = findViewById(R.id.btnAddCategory);
         viewCollection = findViewById(R.id.categoriesView);
 
-        add.setOnClickListener(View -> {
-            HashMap hmap = new HashMap();
-
-            hmap.put("Category name", categoryName.getText().toString());
-            hmap.put("Goals Set", numGoals.getText().toString());
-
-            String key = rootdatabaseref.child("SoccerPlayersInfo").push().getKey();
-            dbHelper.AddItem(key, hmap).addOnSuccessListener(Success -> {
-                Toast.makeText(this, "Your category has been successfully created", Toast.LENGTH_SHORT).show();
-                categoryName.setText("");
-                numGoals.setText("");
-                //Intent items = new Intent(CreateCollections.this, AddItemScreen.class);
-                //startActivity(items);
-            }).addOnFailureListener(Error -> Toast.makeText(CreateCollections.this, "Failed to add your category", Toast.LENGTH_SHORT).show());
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertCatData();
+            }
         });
 
         viewCollection.setOnClickListener(View -> {
@@ -69,6 +60,14 @@ public class CreateCollections extends AppCompatActivity {
 
     }
 
+    private void insertCatData() {
+        category = categoryName.getText().toString();
+
+        categoryClass ct = new categoryClass(category);
+
+        catDbRef.child(category).setValue(ct);
+
+    }
 
 
 }

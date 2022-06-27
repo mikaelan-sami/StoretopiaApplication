@@ -119,7 +119,6 @@
         android:id="@+id/btnView"
         android:layout_width="144dp"
         android:layout_height="54dp"
-        android:onClick="viewColList"
         android:text="View list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

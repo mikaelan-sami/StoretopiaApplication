@@ -121,14 +121,13 @@
 
     <Button
         android:id="@+id/categoriesView"
-        android:layout_width="133dp"
-        android:layout_height="55dp"
+        android:layout_width="205dp"
+        android:layout_height="45dp"
         android:text="View Categories"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915" />
+        app:layout_constraintVertical_bias="0.873" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

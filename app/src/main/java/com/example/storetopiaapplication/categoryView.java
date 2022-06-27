@@ -3,10 +3,13 @@ package com.example.storetopiaapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,10 +19,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class categoryView extends AppCompatActivity {
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference myRef;
+    private FirebaseDatabase myFirebaseDatabase;
+    private DatabaseReference myReference;
     private ArrayList<String> categoryNameList;
     private ArrayAdapter<String> categoryArrayAdapter;
+    String catID;
+    CreateCollections cc = new CreateCollections();
 
     //Creating the listview variable
     ListView catListView;
@@ -33,22 +38,21 @@ public class categoryView extends AppCompatActivity {
 
         catListView = findViewById(R.id.categoryLV);
         categoryNameList = new ArrayList<>();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        myFirebaseDatabase = FirebaseDatabase.getInstance();
+        catID = FirebaseAuth.getInstance().getUid();
 
-        myRef = mFirebaseDatabase.getReference("SoccerPlayersInfo");
+        myReference = myFirebaseDatabase.getReference("SoccerPlayerInfo");
         categoryArrayAdapter = new ArrayAdapter<String>(this, R.layout.categories_layout, R.id.title, categoryNameList);
 
         catListView.setAdapter(categoryArrayAdapter);
-        myRef.addValueEventListener(new ValueEventListener() {
+        myReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    String catName = dataSnapshot.child("Category name").getValue().toString();
-                    String catGoal = dataSnapshot.child("Goals Set").getValue().toString();
+                    String catName = dataSnapshot.child("catName").getValue().toString();
 
                     snapshot.getChildren();
-                    categoryNameList.add("Category name: " + catName
-                            +"\nGoals Set: " + catGoal);
+                    categoryNameList.add("Category name: " + catName);
 
                     categoryArrayAdapter.notifyDataSetChanged();
 
@@ -62,5 +66,9 @@ public class categoryView extends AppCompatActivity {
 
             }
         });
+    }
+    public void itemScreenView(View view){
+        Intent itemAdd = new Intent(categoryView.this, AddItemScreen.class);
+        startActivity(itemAdd);
     }
 }

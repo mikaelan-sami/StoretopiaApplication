@@ -21,12 +21,25 @@
 
     <ListView
         android:id="@+id/categoryLV"
-        android:layout_width="364dp"
-        android:layout_height="572dp"
+        android:layout_width="358dp"
+        android:layout_height="327dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.349" />
+
+    <Button
+        android:id="@+id/btnAddItemScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="itemScreenView"
+        android:text="Add An Item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.815" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "121015642523",
-    "project_id": "storetopiaapplication",
-    "storage_bucket": "storetopiaapplication.appspot.com"
+    "project_number": "175323242931",
+    "project_id": "storetopiaapplication2",
+    "storage_bucket": "storetopiaapplication2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:121015642523:android:c72bc95358fe809807d93e",
+        "mobilesdk_app_id": "1:175323242931:android:1fb4e20a46e8185ad96bc6",
         "android_client_info": {
           "package_name": "com.example.storetopiaapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "121015642523-h7r36j3fu0875a9ltq74pfcbt42mskqs.apps.googleusercontent.com",
+          "client_id": "175323242931-7kdd55svnskt571iikp03cbrnhbuj08v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDo0gtxCgXztgHs2suG7imRhfwyVAvKW_0"
+          "current_key": "AIzaSyCYbolHM4uGM1jZYnzlm63MhfvBoQdJrZA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "121015642523-h7r36j3fu0875a9ltq74pfcbt42mskqs.apps.googleusercontent.com",
+              "client_id": "175323242931-7kdd55svnskt571iikp03cbrnhbuj08v.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

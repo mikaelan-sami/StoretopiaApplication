@@ -3,12 +3,12 @@ package com.example.storetopiaapplication;
 public class SoccerCollections {
     private String playerName;
     private String datePurchased;
-    private Double playerPrice;
+    private String playerTeam;
 
-    public SoccerCollections(String playerName, String datePurchased, Double playerPrice) {
+    public SoccerCollections(String playerName, String datePurchased, String playerTeam) {
         this.playerName = playerName;
         this.datePurchased = datePurchased;
-        this.playerPrice = playerPrice;
+        this.playerTeam = playerTeam;
     }
 
     public String getPlayerName() {
@@ -27,12 +27,12 @@ public class SoccerCollections {
         this.datePurchased = datePurchased;
     }
 
-    public Double getPlayerPrice() {
-        return playerPrice;
+    public String getPlayerTeam() {
+        return playerTeam;
     }
 
     public void setPlayerPrice(Double playerPrice) {
-        this.playerPrice = playerPrice;
+        this.playerTeam = playerTeam;
     }
 
     public SoccerCollections() {
