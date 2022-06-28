@@ -32,7 +32,7 @@ public class CreateCollections extends AppCompatActivity {
 
     EditText categoryName, numGoals;
     Button add, viewCollection;
-    public static String category;
+    public static String category, goals;
     DatabaseReference catDbRef = FirebaseDatabase.getInstance().getReference("SoccerPlayerInfo");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +62,13 @@ public class CreateCollections extends AppCompatActivity {
 
     private void insertCatData() {
         category = categoryName.getText().toString();
+        goals = numGoals.getText().toString();
 
-        categoryClass ct = new categoryClass(category);
+        categoryClass ct = new categoryClass(category, goals);
 
         catDbRef.child(category).setValue(ct);
+
+        Toast.makeText(this, "Category has been succesfully added!", Toast.LENGTH_SHORT).show();
 
     }
 

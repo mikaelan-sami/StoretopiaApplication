@@ -52,7 +52,7 @@ public class categoryView extends AppCompatActivity {
                     String catName = dataSnapshot.child("catName").getValue().toString();
 
                     snapshot.getChildren();
-                    categoryNameList.add("Category name: " + catName);
+                    categoryNameList.add(catName);
 
                     categoryArrayAdapter.notifyDataSetChanged();
 
