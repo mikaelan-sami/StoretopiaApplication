@@ -68,9 +68,11 @@ public class AddItemScreen extends AppCompatActivity {
         String Team = team.getText().toString();
         String Date = date.getText().toString();
 
-        SoccerCollections sc = new SoccerCollections(Name,Team,Date);
+        SoccerCollections sc = new SoccerCollections(Name,Date,Team);
 
         itemDbRef.child(cc.category).child("SoccerPlayers").child(Name).setValue(sc);
+
+        Toast.makeText(AddItemScreen.this, "Card has been successfully added!", Toast.LENGTH_SHORT).show();
 
     }
 

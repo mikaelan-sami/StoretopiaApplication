@@ -25,7 +25,7 @@ public class categoryView extends AppCompatActivity {
     private ArrayList<String> categoryNameList;
     private ArrayAdapter<String> categoryArrayAdapter;
     String catID;
-    public static String catSelected;
+    public static String catSelected, catGoal;
     CreateCollections cc = new CreateCollections();
 
     //Creating the listview variable

@@ -29,7 +29,7 @@ public class displayListView extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference myRef;
     private ArrayList<String> categoryList;
-    private ListView listViewCat;
+    private ListView listViewItems;
     public static String plName, plTeam, plDate;
     private ArrayAdapter<String> categoryArrayAdapter;
     CreateCollections cc = new CreateCollections();
@@ -39,20 +39,30 @@ public class displayListView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_list_view);
-        listViewCat = findViewById(R.id.soccerPlayerListView);
+        listViewItems = findViewById(R.id.soccerPlayerListView);
         categoryList = new ArrayList<>();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
+        pc = findViewById(R.id.pieChart);
 
         myRef = mFirebaseDatabase.getReference("SoccerPlayerInfo").child(cc.category).child("SoccerPlayers");
 
         categoryArrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_text_view, R.id.textView20, categoryList);
 
-        listViewCat.setAdapter(categoryArrayAdapter);
+        listViewItems.setAdapter(categoryArrayAdapter);
+
+        //OnClick event for the items within the list(category)
+        listViewItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(displayListView.this, "This item is called" + categoryArrayAdapter.getItem(i), Toast.LENGTH_SHORT).show();
+            }
+        });
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                int count = (int) snapshot.getChildrenCount();
-                displayPieChart(count);
+              int count = (int) snapshot.getChildrenCount();
+              displayPieChart(count);
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                      plDate = dataSnapshot.child("playerTeam").getValue().toString();
                      plName = dataSnapshot.child("playerName").getValue().toString();
@@ -60,14 +70,14 @@ public class displayListView extends AppCompatActivity {
 
                     snapshot.getChildren();
                     categoryList.add("Player Name: " + plName
-                            +"\nPlayer Team: " + plTeam
-                            +"\nDate Aquired: " + plDate);
+                            +"\nPlayer Team: " + plTeam+"\nDate Aquired: " + plDate
+                    );
 
                     categoryArrayAdapter.notifyDataSetChanged();
 
 
                 }
-                listViewCat.setAdapter(categoryArrayAdapter);
+                listViewItems.setAdapter(categoryArrayAdapter);
             }
 
             @Override
@@ -76,13 +86,7 @@ public class displayListView extends AppCompatActivity {
             }
         });
 
-        //OnClick event for the items within the list(category)
-        listViewCat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(displayListView.this, "This item is called" + categoryArrayAdapter.getItem(i), Toast.LENGTH_SHORT).show();
-            }
-        });
+
 
     }
 
@@ -101,8 +105,8 @@ public class displayListView extends AppCompatActivity {
         typeAmountMap.put("Cards to Acquire", remainingAmount);
 
         ArrayList<Integer> colours = new ArrayList<>();
-        colours.add(Color.parseColor("#0f02f7"));
-        colours.add(Color.parseColor("#ef02f7"));
+        colours.add(Color.parseColor("#057bf2"));
+        colours.add(Color.parseColor("#1d02a6"));
 
         for (String type: typeAmountMap.keySet())
         {
