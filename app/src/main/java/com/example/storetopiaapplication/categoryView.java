@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,6 +25,7 @@ public class categoryView extends AppCompatActivity {
     private ArrayList<String> categoryNameList;
     private ArrayAdapter<String> categoryArrayAdapter;
     String catID;
+    public static String catSelected;
     CreateCollections cc = new CreateCollections();
 
     //Creating the listview variable
@@ -64,6 +66,14 @@ public class categoryView extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        catListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                catSelected = categoryNameList.get(i);
+                //Add Items display screen (displayListView Class)
             }
         });
     }
