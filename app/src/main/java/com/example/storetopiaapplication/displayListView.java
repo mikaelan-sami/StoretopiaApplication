@@ -3,11 +3,13 @@ package com.example.storetopiaapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,6 +37,7 @@ public class displayListView extends AppCompatActivity {
     CreateCollections cc = new CreateCollections();
     categoryView cv = new categoryView();
     PieChart pc;
+    Button btnBack, btnitems;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class displayListView extends AppCompatActivity {
         categoryList = new ArrayList<>();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         pc = findViewById(R.id.pieChart);
+        btnBack = findViewById(R.id.backBtn);
+        btnitems = findViewById(R.id.itemBtn);
 
         myRef = mFirebaseDatabase.getReference("SoccerPlayerInfo").child(cc.category).child("SoccerPlayers");
 
@@ -86,10 +91,40 @@ public class displayListView extends AppCompatActivity {
             }
         });
 
+        //Back button onclicklistener
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goBack();
+            }
+        });
+
+        //Add item button onclicklistener
+        btnitems.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                itemScreen();
+            }
+        });
 
 
     }
 
+    //Takes the user to the add item page if they wish to add more items
+    private void itemScreen() {
+
+        Intent ais = new Intent(displayListView.this, AddItemScreen.class);
+        startActivity(ais);
+
+    }
+
+    //Method Takes the user back to the previous page
+    private void goBack() {
+        Intent bck = new Intent(displayListView.this, AddItemScreen.class);
+        startActivity(bck);
+    }
+
+    //Displays the pie chart - How many items they have & How many items they still need to acquire
     private void displayPieChart(int count) {
 
         String label = "type";
