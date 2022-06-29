@@ -21,7 +21,11 @@ as the development progresses*
 *Currently*
 Application Capabilities:
 - Login and register
+- Reset their password
 - Add multiple categories
+- Set a goal amount of cards to collect
 - Add items to the categories created
 - View their categories in a list form
 - View their items in a list form
+- Save the list to their device
+- View a graph depicting how close they are to reaching their goal
